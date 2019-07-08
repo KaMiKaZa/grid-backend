@@ -8,7 +8,7 @@ bp = Blueprint('database', __name__, url_prefix='/api')
 
 
 @bp.route('/<string:db>/<string:coll>/create', methods = ['POST'])
-def create(db, coll, debug = False):
+def create(db, coll):
     MONGO_URI = current_app.config.get('MONGO_URI', 'mongodb://localhost:27017')
 
     document = request.get_json()
